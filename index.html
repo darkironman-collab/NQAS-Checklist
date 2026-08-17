@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0f766e">
+<meta name="description" content="Mobile-friendly AAM-SC NQAS checklist and guidance covering 12 package services and 8 Areas of Concern.">
+<link rel="manifest" href="manifest.webmanifest">
+<title>AAM-SC NQAS Checklist</title>
+<style>
+:root{
+ --bg:#f5f8f8;--card:#fff;--text:#172425;--muted:#68797b;--line:#dbe5e5;
+ --brand:#0f766e;--brand2:#115e59;--soft:#e8f5f2;--shadow:0 8px 28px rgba(20,50,50,.08);
+ --radius:18px;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+button,input,select{font:inherit}button{cursor:pointer}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(13px);border-bottom:1px solid var(--line)}
+.topin{max-width:1440px;margin:auto;display:flex;align-items:center;gap:12px;padding:11px 16px}
+.logo{width:43px;height:43px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,#0f766e,#14b8a6);color:#fff;font-weight:950;box-shadow:var(--shadow)}
+.brand{min-width:0;flex:1}.brand b{display:block;font-size:17px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.brand span{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+.shell{max-width:1440px;margin:auto;padding:16px;display:grid;grid-template-columns:220px minmax(0,1fr);gap:16px}
+.side{position:sticky;top:83px;align-self:start;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:9px}
+.nav{border:0;background:transparent;width:100%;text-align:left;padding:12px;border-radius:12px;font-weight:800;color:#3a4d4f;margin:2px 0}
+.nav.active,.nav:hover{background:var(--soft);color:var(--brand)}
+.view{display:none}.view.active{display:block}
+.hero{background:linear-gradient(135deg,#0f766e,#115e59 64%,#134e4a);border-radius:23px;padding:24px;color:#fff;box-shadow:var(--shadow);overflow:hidden;position:relative}
+.hero:after{content:"";position:absolute;right:-85px;top:-155px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.07)}
+.hero h1{margin:0 0 8px;font-size:28px}.hero p{margin:0;max-width:900px;color:#d8fffa;line-height:1.55}
+.flow{display:flex;flex-wrap:wrap;gap:7px;margin-top:17px}.chip{border-radius:999px;padding:6px 9px;font-size:11px;font-weight:850;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.17)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}.stat{background:#fff;border:1px solid var(--line);border-radius:15px;padding:15px;box-shadow:var(--shadow)}.stat small{display:block;color:var(--muted);font-weight:800}.stat strong{display:block;font-size:27px;margin-top:5px}.stat span{font-size:11px;color:var(--muted)}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin:22px 2px 11px}.head h2{margin:0;font-size:20px}.head p{margin:3px 0 0;color:var(--muted);font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px;box-shadow:var(--shadow)}.click{cursor:pointer;transition:.16s transform,.16s border-color}.click:hover{transform:translateY(-2px);border-color:#91cfc7}.card h3{font-size:15px;margin:8px 0 0}.sub{font-size:12px;color:var(--muted);line-height:1.45;margin-top:5px}.badge{display:inline-flex;padding:5px 8px;border-radius:999px;background:#eff4f4;color:#4b5e60;font-size:10px;font-weight:900}.badge.brand{background:var(--soft);color:var(--brand)}
+.filters{display:grid;grid-template-columns:minmax(250px,2fr) minmax(170px,1fr) minmax(170px,1fr);gap:9px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:11px;box-shadow:var(--shadow);position:sticky;top:76px;z-index:30}
+.field{display:flex;flex-direction:column;gap:4px}.field label{font-size:10px;color:var(--muted);font-weight:900}.field input,.field select{border:1px solid #cddadb;border-radius:10px;padding:10px 11px;outline:none;background:#fff;color:var(--text)}.field input:focus,.field select:focus{border-color:#57aaa1;box-shadow:0 0 0 3px #e1f5f2}
+.list{display:flex;flex-direction:column;gap:9px;margin-top:11px}.cp{background:#fff;border:1px solid var(--line);border-radius:15px;padding:14px;box-shadow:0 4px 15px rgba(20,45,45,.04)}.row{display:flex;align-items:flex-start;gap:9px}.id{font-size:10px;font-weight:950;color:var(--brand);white-space:nowrap;padding-top:2px}.ct{font-weight:820;line-height:1.38;flex:1}.meta{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}.cp .sub{margin-top:7px}.btn{border:0;border-radius:10px;padding:9px 11px;font-weight:850}.primary{background:var(--brand);color:#fff}.primary:hover{background:var(--brand2)}.ghost{background:#edf4f3;color:#365153}.actions{margin-top:10px}
+.empty{padding:38px 15px;text-align:center;color:var(--muted);background:#fff;border:1px dashed #cbd8d9;border-radius:15px}
+.pager{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:12px 2px;color:var(--muted);font-size:11px}
+.loading{padding:35px;text-align:center;color:var(--muted)}.spinner{width:28px;height:28px;border-radius:50%;border:3px solid #dcebea;border-top-color:var(--brand);animation:spin .7s linear infinite;margin:0 auto 10px}@keyframes spin{to{transform:rotate(360deg)}}
+.modalwrap{display:none;position:fixed;inset:0;z-index:100;background:rgba(5,23,24,.55);padding:15px;align-items:center;justify-content:center}.modalwrap.open{display:flex}.modal{width:min(940px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:20px;box-shadow:0 25px 80px rgba(0,0,0,.28)}.mh{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);display:flex;gap:10px;align-items:flex-start;padding:15px 17px;z-index:2}.mh h3{margin:0;font-size:17px;flex:1;line-height:1.35}.close{border:0;background:#edf3f3;width:35px;height:35px;border-radius:10px;font-size:20px}.mb{padding:17px}.dg{display:grid;grid-template-columns:1fr 1fr;gap:10px}.box{border:1px solid var(--line);background:#fbfdfd;border-radius:13px;padding:12px}.box.full{grid-column:1/-1}.box h4{font-size:10px;letter-spacing:.055em;text-transform:uppercase;color:var(--muted);margin:0 0 7px}.box p{font-size:13px;line-height:1.55;margin:0;white-space:pre-wrap}
+.bottom{display:none}.note{margin-top:14px;background:#eff9f7;border:1px solid #bce3dd;border-radius:13px;padding:12px 14px;font-size:12px;color:#315e59;line-height:1.5}
+footer{text-align:center;color:var(--muted);font-size:10px;padding:25px 8px 8px}
+@media(max-width:1050px){.shell{grid-template-columns:185px minmax(0,1fr)}.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){
+ .topin{padding:9px 11px}.brand b{font-size:14px}.brand span{display:none}.shell{display:block;padding:11px 11px 80px}.side{display:none}
+ .hero{padding:19px 16px;border-radius:18px}.hero h1{font-size:22px}.stats{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}.filters{position:static;grid-template-columns:1fr}.dg{grid-template-columns:1fr}.box.full{grid-column:auto}
+ .bottom{display:grid;position:fixed;bottom:0;left:0;right:0;z-index:60;grid-template-columns:repeat(4,1fr);background:#fff;border-top:1px solid var(--line);padding:5px 3px calc(5px + env(safe-area-inset-bottom));box-shadow:0 -5px 20px rgba(0,0,0,.08)}
+ .bottom button{border:0;background:transparent;color:#68797b;font-size:10px;padding:6px 2px}.bottom button b{display:block;font-size:18px;line-height:19px}.bottom button.active{color:var(--brand);font-weight:900}
+ .modalwrap{padding:0}.modal{height:100vh;max-height:100vh;border-radius:0}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="topin"><div class="logo">Q</div><div class="brand"><b>AAM-SC NQAS Checklist</b><span>12 Package Services • 8 Areas of Concern • Field Guidance</span></div></div></header>
+<div class="shell">
+<aside class="side">
+ <button class="nav active" data-view="home">▦ &nbsp;Home</button>
+ <button class="nav" data-view="packages">12 &nbsp;Package Services</button>
+ <button class="nav" data-view="aocs">8 &nbsp;Areas of Concern</button>
+ <button class="nav" data-view="checklist">☑ &nbsp;Checklist</button>
+</aside>
+<main>
+<section id="home" class="view active">
+ <div class="hero"><h1>AAM-SC NQAS made simple</h1><p>One mobile-friendly reference linking the NQAS checklist with package services, Areas of Concern, field actions, records and evidence requirements.</p><div class="flow"><span class="chip">What should I DO?</span><span class="chip">→</span><span class="chip">What should I RECORD?</span><span class="chip">→</span><span class="chip">What EVIDENCE?</span></div></div>
+ <div class="stats"><div class="stat"><small>Package Services</small><strong>12</strong><span>AAM-SC service packages</span></div><div class="stat"><small>Areas of Concern</small><strong>8</strong><span>NQAS AOCs</span></div><div class="stat"><small>Measurable Elements</small><strong>125</strong><span>Checklist structure</span></div><div class="stat"><small>Checkpoints</small><strong id="cpCount">582</strong><span>Searchable requirements</span></div></div>
+ <div class="head"><div><h2>Browse by Package Service</h2><p>Open a service package to see relevant checkpoints, including cross-cutting requirements.</p></div></div><div id="homePackages" class="grid"></div>
+ <div class="note"><b>Purpose:</b> This version is a guidance/reference tool. Compliance scoring, gap-entry forms, responsible-person fields, target dates and closure-evidence forms are intentionally not included.</div>
+</section>
+<section id="packages" class="view"><div class="head"><div><h2>12 Package Services</h2><p>Select any service package to filter the complete checklist.</p></div></div><div id="packageGrid" class="grid"></div></section>
+<section id="aocs" class="view"><div class="head"><div><h2>8 Areas of Concern</h2><p>Browse the NQAS checklist by AOC.</p></div></div><div id="aocGrid" class="grid"></div></section>
+<section id="checklist" class="view">
+ <div class="head"><div><h2>Checklist & Guidance</h2><p id="summary">Loading checklist…</p></div><button class="btn ghost" onclick="clearFilters()">Clear filters</button></div>
+ <div class="filters"><div class="field"><label>SEARCH</label><input id="q" placeholder="Search checkpoint, measurable element, record, evidence..."></div><div class="field"><label>PACKAGE SERVICE</label><select id="pf"></select></div><div class="field"><label>AREA OF CONCERN</label><select id="af"></select></div></div>
+ <div id="list" class="list"><div class="loading"><div class="spinner"></div>Loading 582 checkpoints…</div></div><div id="pager" class="pager"></div>
+</section>
+<footer>AAM-SC NQAS Checklist • Mobile-first static web application</footer>
+</main></div>
+<nav class="bottom"><button class="active" data-view="home"><b>▦</b>Home</button><button data-view="packages"><b>12</b>Packages</button><button data-view="aocs"><b>8</b>AOCs</button><button data-view="checklist"><b>☑</b>Checklist</button></nav>
+
+<div id="mw" class="modalwrap" onclick="if(event.target===this)closeModal()"><div class="modal"><div class="mh"><span id="mid" class="badge brand"></span><h3 id="mt"></h3><button class="close" onclick="closeModal()">×</button></div><div id="mb" class="mb"></div></div></div>
+<script>
+let META=null, ALL=[], page=1; const PAGE=40;
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+function go(v){document.querySelectorAll('.view').forEach(x=>x.classList.toggle('active',x.id===v));document.querySelectorAll('[data-view]').forEach(x=>x.classList.toggle('active',x.dataset.view===v));if(v==='checklist')renderList();scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.view)));
+function pkgMatch(raw,code){if(!code)return true;if(raw==='ALL')return true;return String(raw).split(',').map(x=>x.trim()).includes(code)}
+async function load(){
+ try{
+  META=await fetch('data/meta.json').then(r=>{if(!r.ok)throw Error();return r.json()});
+  const parts=await Promise.all(META.chunks.map(u=>fetch(u).then(r=>{if(!r.ok)throw Error(u);return r.json()})));ALL=parts.flat();
+  document.getElementById('cpCount').textContent=ALL.length;init();renderEverything();
+ }catch(e){document.getElementById('list').innerHTML='<div class="empty"><b>Checklist data could not load.</b><br><br>If you opened this file directly from your phone storage, use the hosted GitHub Pages link instead.</div>';document.getElementById('summary').textContent='Data loading failed';}
+}
+function init(){
+ pf.innerHTML='<option value="">All package services</option>'+META.packages.map(p=>`<option value="${p.code}">${p.code} — ${esc(p.name)}</option>`).join('');
+ af.innerHTML='<option value="">All Areas of Concern</option>'+META.aocs.map(a=>`<option value="${a.code}">${a.code} — ${esc(a.name)}</option>`).join('');
+ [q,pf,af].forEach(x=>x.addEventListener(x.id==='q'?'input':'change',()=>{page=1;renderList()}));
+}
+function countsForPackage(code){return ALL.filter(c=>pkgMatch(c.p,code)).length}
+function renderEverything(){
+ const pc=META.packages.map(p=>`<div class="card click" onclick="filterPackage('${p.code}')"><span class="badge brand">${p.code}</span><span class="badge" style="float:right">${countsForPackage(p.code)} checkpoints</span><h3>${esc(p.name)}</h3><div class="sub">Tap to view all mapped and cross-cutting requirements.</div></div>`).join('');
+ homePackages.innerHTML=pc.slice(0,6);packageGrid.innerHTML=pc;
+ aocGrid.innerHTML=META.aocs.map(a=>`<div class="card click" onclick="filterAoc('${a.code}')"><span class="badge brand">AOC ${a.code}</span><span class="badge" style="float:right">${a.checkpoints} checkpoints</span><h3>${esc(a.name)}</h3><div class="sub">${a.standards} Standards • ${a.me} Measurable Elements</div></div>`).join('');
+ renderList();
+}
+function filtered(){
+ const text=(q?.value||'').trim().toLowerCase(),pkg=pf?.value||'',aoc=af?.value||'';
+ return ALL.filter(c=>{
+  if(pkg&&!pkgMatch(c.p,pkg))return false;if(aoc&&c.A!==aoc)return false;
+  if(text){const hay=[c.i,c.r,c.m,c.c,c.v,c.a,c.g,c.d,c.o,c.e,c.s,c.sr].join(' ').toLowerCase();if(!hay.includes(text))return false}
+  return true;
+ });
+}
+function renderList(){
+ if(!ALL.length)return;const arr=filtered(),pages=Math.max(1,Math.ceil(arr.length/PAGE));if(page>pages)page=pages;const part=arr.slice((page-1)*PAGE,page*PAGE);
+ summary.textContent=`${arr.length} matching checkpoints • page ${page} of ${pages}`;
+ list.innerHTML=part.length?part.map(c=>`<article class="cp"><div class="row"><div class="id">${esc(c.i)}</div><div class="ct">${esc(c.c)}</div></div><div class="meta"><span class="badge brand">${esc(c.p)}</span><span class="badge">AOC ${esc(c.A)}</span><span class="badge">${esc(c.r)}</span>${c.a?`<span class="badge">${esc(c.a)}</span>`:''}</div><div class="sub">${esc(c.m)}</div><div class="actions"><button class="btn primary" onclick="openCp('${c.i}')">View Guidance</button></div></article>`).join(''):'<div class="empty">No checkpoint matches these filters.</div>';
+ pager.innerHTML=`<span>Showing ${arr.length?((page-1)*PAGE+1):0}–${Math.min(page*PAGE,arr.length)} of ${arr.length}</span><div><button class="btn ghost" ${page<=1?'disabled':''} onclick="page--;renderList()">Previous</button> <button class="btn ghost" ${page>=pages?'disabled':''} onclick="page++;renderList()">Next</button></div>`;
+}
+function filterPackage(code){go('checklist');pf.value=code;af.value='';page=1;renderList()}
+function filterAoc(code){go('checklist');af.value=code;pf.value='';page=1;renderList()}
+function clearFilters(){q.value='';pf.value='';af.value='';page=1;renderList()}
+function openCp(id){const c=ALL.find(x=>x.i===id);if(!c)return;mid.textContent=c.i;mt.textContent=c.c;mb.innerHTML=`<div class="dg">
+ <div class="box"><h4>Package Mapping</h4><p>${esc(c.p)}</p></div><div class="box"><h4>Area of Concern</h4><p>AOC ${esc(c.A)}</p></div>
+ <div class="box full"><h4>Standard</h4><p>${esc(c.sr)} — ${esc(c.s)}</p></div>
+ <div class="box full"><h4>Measurable Element</h4><p><b>${esc(c.r)}</b> — ${esc(c.m)}</p></div>
+ <div class="box full"><h4>Checkpoint</h4><p>${esc(c.c)}</p></div>
+ <div class="box full"><h4>What should I DO?</h4><p>${esc(c.d)}</p></div>
+ <div class="box full"><h4>What should I RECORD?</h4><p>${esc(c.o)}</p></div>
+ <div class="box full"><h4>What EVIDENCE should I maintain?</h4><p>${esc(c.e)}</p></div>
+ <div class="box"><h4>Means of Verification</h4><p>${esc(c.v)}</p></div><div class="box"><h4>Assessment Method</h4><p>${esc(c.a)}</p></div>
+ <div class="box full"><h4>Guiding Principle</h4><p>${esc(c.g)}</p></div></div>`;mw.classList.add('open')}
+function closeModal(){mw.classList.remove('open')}
+load();
+if('serviceWorker' in navigator&&location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+</script>
+</body></html>
